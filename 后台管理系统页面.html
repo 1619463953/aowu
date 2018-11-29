@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<style>
+    .background1
+    {list-style-type: none;
+    margin: 10% 0% auto; padding: 0;
+    width: 10%; height: 240%; background-color: pink;
+    position: absolute; top:-1%;}
+    .background2
+    {width: 100%; height: 20%;
+    background-color: #FF6EB4;
+    margin: 0% 0% auto; padding: 0;
+    top:0%; position: absolute;}
+    .background3
+    {width: 75%;height: 20%; background-color: white;
+        position: absolute; top: 25%; left: 13%;}
+    .search 
+    {width: 30%; height: 10%;
+    border-radius: 25px; outline: none;
+    border: 1px solid #ccc;  padding-left: 20%;
+    position: absolute; top:3%; left: 30%;}
+    .btn 
+    {height: 10%; width: 10%;
+    position: absolute; background: white;
+    border-radius: 25px; top: 3%; left: 81%;
+    border: none; outline: none; cursor: pointer;}
+    li a 
+    { display: block; color: #000;
+    padding: 8px 16px; text-decoration: none;}
+    li a:hover
+    { background-color: #555; color: white;}
+    .imgw1
+    {position: absolute;top:0%;left: 5%;border-radius: 25px;}
+    .word1
+    { position: absolute;left: 12%;top: 20%;}
+     .word2
+    { position: absolute;left: 12%;top: 80%;}
+    .select1
+    { position: absolute; top:30%;left: 20%}
+    .select1_word
+    { position: absolute;left: 15%;top: 30%;}
+    .select2
+    { position: absolute;top:30%;left: 35%}
+    .select2_word
+    {position: absolute;left: 30%;top: 30%;}
+    .select3
+    { position: absolute; top:30%; left: 50%}
+    .select3_word
+    {position: absolute;left: 45%;top: 30%;}
+    .select4
+    {position: absolute; top:30%;left: 65%}
+    .select4_word
+    {position: absolute;left: 60%;top: 30%;}
+    .select22
+    { position: absolute; top:35%;left: 35%}
+    .select22_word
+    {position: absolute;left: 30%;top: 35%;}
+    .select33
+    { position: absolute; top:35%; left: 50%}
+    .select33_word
+    {position: absolute;left: 45%;top: 35%;}
+    .select44
+    {position: absolute; top:35%;left: 65%}
+    .select44_word
+    {position: absolute;left: 60%;top: 35%; }
+    .button0
+    {position: absolute;;left: 75%;top: 32.5%;}
+    .calendar_background1
+    {background-color: white; width: 6%;height: 20%;
+        position: absolute; top: 55%;left: 13%;}
+    .calendar_background2
+    {background-color: white; width: 10.25%;height: 20%;
+        position: absolute; top: 55%;left: 21.25%;}
+    .calendar_background3
+    {background-color: white; width: 10.25%;height: 20%;
+        position: absolute; top: 55%;left: 32.5%;}
+    .calendar_background4
+    {background-color: white; width: 11.25%;height: 20%;
+        position: absolute; top: 55%; left: 44.75%;}
+    .calendar_background5
+    {background-color: white; width: 10.25%;height: 20%;
+        position: absolute; top: 55%;left: 58%;}
+    .calendar_background6
+    {background-color: white; width: 8%;height: 20%;
+        position: absolute; top: 55%;left: 70%;}
+    .calendar_background7
+    {background-color: white; width: 8%;height: 20%;
+        position: absolute; top: 55%;left: 80%;}
+    .sum1
+    {background-color: white; top: 85%;left: 13%; position: absolute; width: 15%;height:15%;}
+    .sum2
+    {background-color: white; top: 85%;left: 33%; position: absolute; width: 15%;height:15%;}
+    .sum3
+    {background-color: white; top: 85%;left: 53%; position: absolute; width: 15%;height:15%;}
+    .sum4
+    {background-color: white; top: 85%;left: 73%; position: absolute; width: 15%;height:15%;}
+   
+    .sum11
+    {background-color: green; top: 87%;left: 21%; position: absolute; width: 6%;height:10%;}
+    .sum22
+    {background-color: blue; top: 87%;left: 41%; position: absolute; width: 6%;height:10%;}
+    .sum33
+    {background-color: red; top: 87%;left: 61%; position: absolute; width: 6%;height:10%;}
+    .sum44
+    {background-color: yellow; top: 87%;left: 81%; position: absolute; width: 6%;height:10%;}
+
+    .sum111
+    {background-color: green; top: 85.4%;left: 13%; position: absolute; width: 0.3%;height:14%;}
+    .sum222
+    {background-color: blue; top: 85.4%;left: 33%; position: absolute; width: 0.3%;height:14%;}
+    .sum333
+    {background-color: red; top: 85.4%;left: 53%; position: absolute; width: 0.3%;height:14%;}
+    .sum444
+    {background-color: yellow; top: 85.4%;left: 73%; position: absolute; width: 0.3%;height:14%;}
+
+    .table-left
+    {  background-color: white; top:135%; left: 20%; position: absolute; width: 30%; height: 25%;
+        border-color: black;border:1px;}
+    .table-left-1
+    {background-color: pink; top:123%; left: 17%; position: absolute; width: 6%; height: 4%;  
+      border-radius: 25px;}
+    .table-left-2
+    {background-color: gray; top:123%; left: 25%; position: absolute; width: 6%; height: 4%;  
+      border-radius: 25px;}
+    .table-left-3
+    {background-color: gray; top:123%; left: 33%; position: absolute; width: 6%; height: 4%;  
+      border-radius: 25px;}
+    .table-left-4
+    {background-color: gray; top:123%; left: 41%; position: absolute; width: 6%; height: 4%;  
+      border-radius: 25px;}
+    .table-left-5
+    {background-color: gray; top:123%; left: 49%; position: absolute; width: 6%; height: 4%;  
+      border-radius: 25px;}
+    .table-left-6
+    {background-color: white; top:115%; left: 13%; position: absolute; width: 45%; height: 70%;
+    border-radius: 5px; border-color: black;border:1px solid;}
+    .table-left-6-up
+    {background-color: #E5E5E5; top:115.1%; left: 13.1%; position: absolute; width: 45%; height: 6%;
+    border-radius: 5px; }
+    .table-left-border-inner
+    {position: absolute;border:1px solid; top: 128%;left:16%; width: 40%;height: 40%;border-radius: 10px; }
+
+    .table-right
+    {background-color: white; top:115%; left: 60%; position: absolute; width: 28%; height: 70%;
+    border-radius: 5px; border-color: black;border:1px solid;}
+    .table-right-up
+    {background-color: #E5E5E5; top:115.1%; left: 60.1%; position: absolute; width: 28%; height: 6%;
+    border-radius: 5px; }
+    .table-right-word1
+    {position: absolute;top: 123%;left: 63%;}
+    .table-right-word2
+    {position: absolute;top: 130%;left: 63%;}
+     .table-right-inner
+    {background-color: white; top:135%; left: 61%; position: absolute; width: 26%; height: 16%;
+    border-radius: 5px; border-top: 1px solid; border-bottom: 1px solid; border-color: black}
+    .table-right-word3
+    {position: absolute;top: 136%;left: 65%;width: 5%; list-style-type: none; } 
+    .table-right-word4
+    {position: absolute;top: 136%;left: 75%;width: 5%;list-style-type: none;}
+    .table-right-word5
+    {position: absolute;top: 156%;left: 65%;width: 15%;list-style-type: none;}
+    .table-right-border-buttom
+    { background-color: white; top:168%; left: 61%; position: absolute; width: 26%; height: 1%;
+     border-bottom: 1px solid; border-color: black}
+    .table-right-secret
+    {position: absolute; top:174%; left:65%;}
+
+    .table-left-left
+    {background-color: white; top:188%; left: 13%; position: absolute; width: 28%; height: 65%;
+    border-radius: 5px; border-color: black;border:1px solid;}
+    .table-left-left-up
+    {background-color: #E5E5E5; top:188.1%; left: 13.1%; position: absolute; width: 28%; height: 6%;
+    border-radius: 5px; }
+    .call-position1
+    {position: absolute;top: 203.1%;left: 13.1%;}
+    .call-position2
+    {position: absolute;top: 213%;left: 13.1%;}
+    .call td:hover
+    {background-color: #6d8ab7;color: white;}
+    .cal td:hover
+    { background-color: #6d8ab7;color: white;}
+    .cal-year
+    {position: absolute;top: 196%;left: 15%;}
+    .cal-month
+    {position: absolute;top: 196%;left: 25%;} 
+    .cal-day
+    {position: absolute;top: 196%;left: 35%;}      
+
+    .table-right-right
+    {position: absolute; width: 43%; height: 65%; top: 188%; left: 45%; background-color: white;
+        border-radius: 5px; border:1px solid;}  
+    .table-right-right-up
+    {background-color: #E5E5E5; top:188.1%; left: 45.1%; position: absolute; width: 43%; height: 6%;}
+    .table-right-right-inner
+    {position: absolute; top: 195%;left: 47%;}
+    .table-strip-1-0
+    {position: absolute; top: 205%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+    .table-strip-1-1
+    {position: absolute; top: 205%; left: 66%; width: 17%; height: 2%; background-color:#FF8247; 
+        border-radius: 20px; border:0;}
+    .table-strip-2-0
+    {position: absolute; top: 212%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+    .table-strip-2-1
+    {position: absolute; top: 212%; left: 66%; width: 15%; height: 2%; background-color:#FFDEAD; 
+        border-radius: 20px; border:0;}
+    .table-strip-3-0
+    {position: absolute; top: 219%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+    .table-strip-3-1
+    {position: absolute; top: 219%; left: 66%; width: 12%; height: 2%; background-color:#FFEC8B; 
+        border-radius: 20px; border:0;}
+    .table-strip-4-0
+    {position: absolute; top: 226%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+    .table-strip-4-1
+    {position: absolute; top: 226%; left: 66%; width: 10%; height: 2%; background-color:#CAE1FF; 
+        border-radius: 20px; border:0;}
+    .table-strip-5-0
+    {position: absolute; top: 233%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+    .table-strip-5-1
+    {position: absolute; top: 233%; left: 66%; width: 8%; height: 2%; background-color:#B4EEB4; 
+        border-radius: 20px; border:0;}
+    .table-strip-6-0
+    {position: absolute; top: 240%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+   .table-strip-6-1
+    {position: absolute; top: 240%; left: 66%; width: 6%; height: 2%; background-color:#D1EEEE; 
+        border-radius: 20px; border:0;}
+    .table-strip-7-0
+    {position: absolute; top: 247%; left: 66%; width: 20%; height: 2%; background-color:lightgray; 
+        border-radius: 20px; border:0;}
+    .table-strip-7-1
+    {position: absolute; top: 247%; left: 66%; width: 3%; height: 2%; background-color:#CDB5CD; 
+        border-radius: 20px; border:0;}
+
+</style>
+</head>
+
+<body bgcolor="#E5E5E5">
+    <div class="background2"></div>
+    <div>
+    <ul>   
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543246176376&di=505ee1a921ad730545026fc878bb1092&imgtype=0&src=http%3A%2F%2Fimg05.tooopen.com%2Fimages%2F20150601%2Ftooopen_sy_128083591855.jpg" width="10%" class="imgw1">  
+    <form action="">
+        <input type="text" class="search" placeholder="输入需要搜索的内容"><!--placeholder 属性规定可描述输入字段预期值的简短的提示信息-->
+        <input name="research" type="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543054235836&di=33eab6e87cfbbbdb585c0c486578aff1&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1745312262%2C871142565%26fm%3D214%26gp%3D0.jpg" class="btn"> <!--border-radius向div元素添加圆角边框-->
+    </form>
+    </ul>
+    </div>
+    <div>
+    <ul class="background1">
+        <li style="height: 5%"><h2 color:red>⭐Caicys</h2></li>
+        <li style="height: 5%"><a href="#about">💗个人报表</a></li>
+        <li style="height: 5%"><a href="#home">💗个人收藏</a></li>
+        <li style="height: 5%"><a href="#news">💗我的分享</a></li>
+        <li style="height: 5%"><a href="#contact">💗图库</a></li>
+        <li style="height: 5%"><a href="#about">💗成长记录</a></li>
+        <li style="height: 5%"><a href="#about">💗账号信息</a></li>
+    </ul>
+    </div>
+    <div class="background3"></div>
+    <div class="word1">c站/个人报表/文档1/文档二</div>
+    <form action="">
+    <select name="research" class="select1">
+    <option value="no.1" selected>第一项</option>
+    <option value="no.2">第二项</option> 
+    <option value="no.3">第三项</option> 
+    <option value="no.4">第四项</option>
+    </select>
+    </form>
+    <div class="select1_word">查询项</div>
+
+    <form action="">
+    <select name="buy" class="select2">
+    <option value="a" selected>小A</option> 
+    <option value="b">小B</option>
+    <option value="c" >小C</option> 
+    <option value="d">小D</option>
+    </select>
+    </form>
+    <div class="select2_word">买方</div>
+
+    <form action="">
+    <select name="date" class="select3">
+    <option value="2017-10-11" selected>2017-10-11</option> 
+    <option value="2017-11-25">2017-11-25</option>
+    <option value="2017-8-15" >2017-8-15</option> 
+    <option value="2017-7-19">2017-7-19</option>
+    </select>
+    </form>
+    <div class="select3_word">日期</div>
+
+    <form action="">
+    <select name="time" class="select4">
+    <option value="1" selected>1个月</option> 
+    <option value="3">3个月</option>
+    <option value="6" >半年</option> 
+    <option value="12">一年</option>
+    </select>
+    </form>
+    <div class="select4_word">总耗时</div>
+
+    <form action="">
+    <select name="buy1" class="select22">
+    <option value="e" selected>小E</option> 
+    <option value="f">小F</option>
+    <option value="g" >小G</option> 
+    <option value="h">小H</option>
+    </select>
+    </form>
+    <div class="select22_word">卖方</div>
+
+    <form action="">
+    <select name="people-count" class="select33">
+    <option value="1" selected>一人</option> 
+    <option value="2">两人</option>
+    <option value="3" >三人</option> 
+    <option value="4">四人</option>
+    </select>
+    </form>
+    <div class="select33_word">人数</div>
+
+    <form action="">
+    <select name="make" class="select44">
+    <option value="5">5项</option> 
+    <option value="10">10项</option>
+    <option value="15" selected>15项</option> 
+    <option value="20">20项</option>
+    </select>
+    </form>
+    <div class="select44_word">成交项</div>
+    
+    <div class="button0"><a href="http://sports.qq.com/"><button type="button"><b>开始体验</b></button></a></div>
+
+    <div class="calendar_background1"><h3 align=center><<<<br><br><<< </h3></div>
+    <div class="calendar_background2"><h3 align=center>10:00am<br><br>$1200 </div>
+    <div class="calendar_background3"><h3 align=center>12:00am<br><br>$1300 </div>
+    <div class="calendar_background4"><h3 align=center>14:00pm<br><br>$1600 </div>
+    <div class="calendar_background5"><h3 align=center>16:00pm<br><br>$1600</div>
+    <div class="calendar_background6"><h3 align=center>18:00pm<br><br>$1500 </div>
+    <div class="calendar_background7"><h3 align=center>>>><br><br>>>></div>
+     
+    <div class="word2">2016年4月份统计</div>
+    <div class="sum1"></div>
+    <div class="sum2"></div>
+    <div class="sum3"></div>
+    <div class="sum4"></div>
+    <div class="sum11"></div>
+    <div class="sum22"></div>
+    <div class="sum33"></div>
+    <div class="sum44"></div>
+    <div class="sum111"></div>
+    <div class="sum222"></div>
+    <div class="sum333"></div>
+    <div class="sum444"></div>
+
+    <div class="table-left-6"></div>
+    <div class="table-left-6-up"><font color="#CDB5CD" face="微软雅黑">第一组项目</font></div>
+    <div class="table-left-border-inner"></div>
+    <table border="1" class="table-left" cellpadding="2">
+    <tr>  <td>购买材料1</td>  
+          <td>推车1</td>
+          <td>搬砖1</td> 
+          <td>加班1</td> 
+    </tr>
+    <tr>  <td>购买材料2</td>  
+          <td>推车 2</td>
+          <td>搬砖2</td> 
+          <td>加班2</td> 
+    </tr>
+    <tr>  <td>购买材料3</td>  
+          <td>推车3</td>
+          <td>搬砖3</td> 
+          <td>加班3</td> 
+    </tr>
+    <tr>  <td>购买材料4</td>  
+          <td>推车 4</td>
+          <td>搬砖4</td> 
+          <td>加班4</td> 
+    </tr>     
+    </table>
+    <div class="table-left-1" align="center"><b>项目1</b></div>
+    <div class="table-left-2" align="center"><b>项目2</b></div>
+    <div class="table-left-3" align="center"><b>项目3</b></div>
+    <div class="table-left-4" align="center"><b>项目4</b></div>
+    <div class="table-left-5" align="center"><b>项目5</b></div>
+
+    <div class="table-right"></div>
+    <div class="table-right-up"><font color="#CDB5CD" face="微软雅黑">第二组项目</font></div>
+    <div class="table-right-word1"><font color="#CDB5CD" face="微软雅黑">标题</font></div>
+    <div class="table-right-word2">项目报名表</div>
+    <div class="table-right-inner"></div>
+    <div class="table-right-word3">
+    <li><font color="#CDB5CD" face="微软雅黑">价格</font></li><br> <li>100RMB</li><br> </div>
+    <div class="table-right-word4">
+    <li><font color="#CDB5CD" face="微软雅黑">负责人</font></li><br> <li>丸子叔叔</li><br> </div>
+    <div class="table-right-word5">
+    <li><font color="#CDB5CD" face="微软雅黑">详细描述</font></li><br>
+    <li>其实我自己都布吉岛.....</li> </div>
+    <div class="table-right-border-buttom"></div>
+    <form class="table-right-secret">
+        <input type="checkbox" name="secret" value="yes">遵守保密协议
+    </form>
+
+    <div class="table-left-left"></div>
+    <div class="table-left-left-up"><font color="#CDB5CD" face="微软雅黑">月历</font></div>
+    <form action="">
+    <select name="year" class="cal-year">
+    <option value="2017">2017年</option> 
+    <option value="2016">2016年</option>
+    <option value="2018" selected>2018年</option> 
+    <option value="2019">2019年</option>
+    </select>
+    </form>
+    <form>
+    <select name="month" class="cal-month">
+    <option value="1">1月</option>
+    <option value="2">2月</option>  
+    <option value="3">3月</option>  
+    <option value="4">4月</option>  
+    <option value="5">5月</option>  
+    <option value="6" selected>6月</option>  
+    <option value="7">7月</option>  
+    <option value="8">8月</option>  
+    <option value="9">9月</option>  
+    <option value="10">10月</option>  
+    <option value="11">11月</option>  
+    <option value="12">12月</option>  
+    </select>
+    </form>
+    <form>
+    <select name="day" class="cal-day">
+    <option value="1">1号</option>
+    <option value="1">1号</option>
+    <option value="2">2号</option>
+    <option value="3">3号</option>
+    <option value="4">4号</option>
+    <option value="5">5号</option>
+    <option value="6">6号</option>
+    <option value="7">7号</option>
+    <option value="8" selected>8号</option>
+    <option value="9">9号</option>
+    <option value="10">10号</option>
+    <option value="11">11号</option>
+    <option value="12">12号</option>
+    <option value="13">13号</option>
+    <option value="14">14号</option>
+    <option value="15">15号</option>
+    <option value="16">16号</option>
+    <option value="17">17号</option>
+    <option value="18">18号</option>
+    <option value="19">19号</option>
+    <option value="20">20号</option>
+    <option value="21">21号</option>
+    <option value="22">22号</option>
+    <option value="23">23号</option>
+    <option value="24">24号</option>
+    <option value="25">25号</option>
+    <option value="26">26号</option>
+    <option value="27">27号</option>
+    <option value="28">28号</option>
+    <option value="29">29号</option>
+    <option value="30">30号</option>
+    <option value="31">31号</option>
+    </select>
+    </form>
+    <table class="call call-position1" border="0" width=28% height=10% cellpadding="0" cellspacing="2"
+            style="background-color:lightgray;">
+        <tr>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Sun</td>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Mon</b></td>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Tue</b></td>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Wed</b></td>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Thu</b></td>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Fri</b></td>
+            <td align="center" width=10% style="background-color: lightgray; color: black;"><b>Sat</b></td>
+        </tr>
+        </table>
+    <table  class="cal call-position2" border="1" width=28% height=40% cellpadding="0" cellspacing="0"
+            style="background-color: white ; border-color: gainsboro">
+        <tr>
+            <td align="center" style="background-color: lightgray; color: black;" ><b>30</b></td>
+            <td align="center" style="background-color: lightgray; color: black;" ><b>31</b></td>
+            <td align="center"><b>1</b></td>
+            <td align="center"><b>2</b></td>
+            <td align="center"><b>3</b></td>
+            <td align="center"><b>4</b></td>
+            <td align="center"><b>5</b></td>
+        </tr>
+        <tr>
+            <td align="center"><b>6</b></td>
+            <td align="center"><b>7</b></td>
+            <td align="center" style="color: white; background-color: #6d8ab7;"><b>8</b></td>
+            <td align="center"><b>9</b></td>
+            <td align="center"><b>10</b></td>
+            <td align="center"><b>11</b></td>
+            <td align="center"><b>12</b></td>
+        </tr>
+        <tr>
+            <td align="center"><b>13</b></td>
+            <td align="center"><b>14</b></td>
+            <td align="center"><b>15</b></td>
+            <td align="center"><b>16</b></td>
+            <td align="center"><b>17</b></td>
+            <td align="center"><b>18</b></td>
+            <td align="center"><b>19</b></td>
+        </tr>
+        <tr>
+            <td align="center"><b>20</b></td>
+            <td align="center"><b>21</b></td>
+            <td align="center"><b>22</b></td>
+            <td align="center"><b>23</b></td>
+            <td align="center"><b>24</b></td>
+            <td align="center"><b>25</b></td>
+            <td align="center"><b>26</b></td>
+        </tr>
+        <tr>
+            <td align="center"><b>27</b></td>
+            <td align="center"><b>28</b></td>
+            <td align="center"><b>29</b></td>
+            <td align="center"><b>30</b></td>
+            <td align="center"><b>31</b></td>
+            <td align="center" style="background-color: lightgray; color: black;"><b>1</b></td>
+            <td align="center" style="background-color: lightgray; color: black;"><b>2</b></td>
+        </tr>
+    </table>
+
+    <div class="table-right-right"></div>
+    <div class="table-right-right-up"><font color="#CDB5CD" face="微软雅黑">汽车行业品牌榜</font></div>
+    <table  class="table-right-right-inner" border="1" width=40% height=57% cellpadding="0" cellspacing="0"
+            style="background-color: white ; border-color: gainsboro">
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>排名</b></td>
+        <td align="center" style="color: black; width: 5%"><b>品牌</b></td>
+        <td style="color: black; width: 40%;  padding-left:8%"><b>搜索指数</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>1</b></td>
+        <td align="center" style="color: black; width: 5%"><b>大众</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>48912001</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>2</b></td>
+        <td align="center" style="color: black; width: 5%"><b>丰田</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>29307333</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>3</b></td>
+        <td align="center" style="color: black; width: 5%"><b>奥迪</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>23139070</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>4</b></td>
+        <td align="center" style="color: black; width: 5%"><b>本田</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>22885564</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>5</b></td>
+        <td align="center" style="color: black; width: 5%"><b>福特</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>22324792</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>6</b></td>
+        <td align="center" style="color: black; width: 5%"><b>宝马</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>21444077</b></td>
+        </tr>
+        <tr>
+        <td align="center" style="color: black; width: 5%" ><b>7</b></td>
+        <td align="center" style="color: black; width: 5%"><b>奔驰</b></td>
+        <td style="color: black; width: 40%; padding-left:8%"><b>20114969</b></td>
+        </tr>
+    </table>
+    <div class="table-strip-1-0"></div>
+    <div class="table-strip-1-1"></div>
+    <div class="table-strip-2-0"></div>
+    <div class="table-strip-2-1"></div>
+    <div class="table-strip-3-0"></div>
+    <div class="table-strip-3-1"></div>
+    <div class="table-strip-4-0"></div>
+    <div class="table-strip-4-1"></div>
+    <div class="table-strip-5-0"></div>
+    <div class="table-strip-5-1"></div>
+    <div class="table-strip-6-0"></div>
+    <div class="table-strip-6-1"></div>
+    <div class="table-strip-7-0"></div>
+    <div class="table-strip-7-1"></div>
+
+</body>
+</html>
